@@ -1,6 +1,6 @@
 # Task keeper
 
-Сквозной пример для книги «Вайбкодер»: HTTP API на Go (`net/http`), in-memory storage.
+Сквозной пример для книги **«Вайбкодер»**: HTTP API на Go (`net/http`), in-memory storage, unit-тесты.
 
 **Спека:** [specs/0001-task-keeper.md](specs/0001-task-keeper.md)
 
@@ -29,11 +29,24 @@ go test ./...
 
 ## Структура
 
-- Точка входа приложения в cmd/taskkeeper/main.go
-- HTTP-сервер в internal/httpapi/server.go
-- In-memory хранилище в internal/storage/memory.go
-- Доменная модель задачи в internal/task/task.go
-- Набор автотестов для ключевых модулей:
-  - internal/httpapi/server_test.go
-  - internal/storage/memory_test.go
-  - internal/task/task_test.go
+- `cmd/taskkeeper/main.go` — точка входа
+- `internal/httpapi/server.go` — HTTP-сервер
+- `internal/storage/memory.go` — in-memory хранилище
+- `internal/task/task.go` — доменная модель
+- `internal/*/*_test.go` — тесты
+
+## Артефакты книги (`notes/`)
+
+Шаблоны для читателей — [notes/README.md](notes/README.md):
+
+| Файл | Описание |
+|------|----------|
+| [matrix-tasks.md](notes/matrix-tasks.md) | Матрица задач: когда отдавать ИИ |
+| [vibe-journal.md](notes/vibe-journal.md) | Журнал вайбкодера |
+| [tools.md](notes/tools.md) | Мой стек ИИ-инструментов |
+
+```bash
+git clone https://github.com/dontagr/taskkeeper.git
+cd taskkeeper
+go test ./...
+```
